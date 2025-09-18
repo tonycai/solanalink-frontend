@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Newsreader:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#1173d4",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              "display": ["Newsreader"]
+            },
+            borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+          },
+        },
+      }
+    </script>
+<title>SolanaLink News &amp; Blog</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<header class="w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200 dark:border-gray-800">
+<div class="container mx-auto flex items-center justify-between whitespace-nowrap px-10 py-4">
+<div class="flex items-center gap-4">
+<svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+<h2 class="text-2xl font-bold text-gray-900 dark:text-white">SolanaLink</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8 text-base font-medium">
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Services</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Solutions</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Resources</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Company</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors">
+              Get Started
+            </button>
+</div>
+</div>
+</header>
+<main class="container mx-auto flex-grow px-4 sm:px-6 lg:px-8 py-12">
+<div class="max-w-5xl mx-auto">
+<div class="text-center mb-12">
+<h1 class="text-5xl font-bold text-gray-900 dark:text-white">News &amp; Blog</h1>
+<p class="mt-4 text-lg text-gray-600 dark:text-gray-400">Stay informed with the latest insights, trends, and updates from SolanaLink.</p>
+</div>
+<section class="mb-16">
+<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Featured Article</h2>
+<div class="bg-background-light dark:bg-background-dark shadow-lg rounded-xl overflow-hidden @container">
+<div class="grid grid-cols-1 @xl:grid-cols-2">
+<div class="relative w-full aspect-[16/10]">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDte5yb8hoYUmvEI6-lEGKIUjzzunc-8UZtaT2GphJFk6gB_L5BsKuCU1y03JTlXttyC1r6PFKdeBYsgARoLqIB9Fo7_kRgiaCCE54jUmMc3-45-tG6ACf7XXzDFCO4dywa4mm6die6Ae9UxTDQBVFHFnVWYwT_HjklumHN6KTf1q5bDx3wf5rrrcs942xreBVJjaHT-7JfaghmjQUyq87LGkviiY83GmGijAP6L6dxR310tV6cB1tFJYQTlQZriYd6JR9N-3-kd8w");'></div>
+</div>
+<div class="p-8 flex flex-col justify-center">
+<h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">The Future of Cloud Computing: Trends and Innovations</h3>
+<p class="text-gray-600 dark:text-gray-400 mb-6">
+                    Explore the latest advancements in cloud technology, including serverless architecture, edge computing, and AI-driven solutions.
+                  </p>
+<a class="inline-block w-auto px-6 py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors self-start" href="#">
+                    Read More
+                  </a>
+</div>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Recent Posts</h2>
+<div class="mb-8">
+<div class="relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3">
+<svg class="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" fill-rule="evenodd"></path>
+</svg>
+</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Search articles..." type="search"/>
+</div>
+</div>
+<div class="space-y-8">
+<article class="flex flex-col sm:flex-row items-center gap-6 p-4 rounded-xl hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors">
+<div class="w-full sm:w-32 h-32 flex-shrink-0 bg-cover bg-center rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBOZCVbU7n97nXc5EdUxwxVj0Rhh4b95Ovf0owci4kHMzlZFlZ49SLasd1fiVAt68CTYbVf3UwtfJm5D7xSxK60KHZ3E_ud28QwFngd_GoJf05WS-AYdE5ItpIpCvkBf6_15EF7j5FtUCDA6DTRMDsiLWTUjI5Q6GnAcv59hoEFQJY-4IAQ8l7z4Z2d8C7gXOedZ7roczqcpf3h90PPyi2B30KIQep7VzF9DjsBtddOqEIdfniyT52ZxbOwluOPG7ijFWTM4TWKyRk");'></div>
+<div class="flex flex-col">
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-1">July 15, 2024</p>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Cybersecurity Best Practices for Businesses</h3>
+<p class="text-gray-600 dark:text-gray-400">A comprehensive guide to cybersecurity best practices for businesses, covering threat detection, data protection, and employee training.</p>
+</div>
+</article>
+<article class="flex flex-col sm:flex-row items-center gap-6 p-4 rounded-xl hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors">
+<div class="w-full sm:w-32 h-32 flex-shrink-0 bg-cover bg-center rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCzQHVlR5pbgk0XtKPyisRzaiBzNWJCMctgNUHY6JkJ-NDxpM6URZzOOQ9ISpBEVA6kYYvl22UuMc-nAJPWpcjYlUSU0H2JphJUfHZoX5nw1NE1C2qDVIT3XcEnX-Mi40ewX4jai1U1q1CmTNekLFDXNfaAKXfYEJim0r_A_3IbBJGsbWNiNfMR85IerJiXm4j08bsFOzSIbewUzbUxrg2hRgO3yEtRby5akUFkxXiVU66Pnr8uO-xqPq5ZOXvrK4AQEiD6ogKaUBw");'></div>
+<div class="flex flex-col">
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-1">June 28, 2024</p>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Optimizing Your IT Infrastructure for Peak Performance</h3>
+<p class="text-gray-600 dark:text-gray-400">Learn how to optimize your IT infrastructure for peak performance, including network upgrades, server management, and cloud integration.</p>
+</div>
+</article>
+<article class="flex flex-col sm:flex-row items-center gap-6 p-4 rounded-xl hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors">
+<div class="w-full sm:w-32 h-32 flex-shrink-0 bg-cover bg-center rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCxt9bZAX9NaOn1p4NbTirR3UEy9xMNLJBWDZyFGOw1zPxQCmNH6kwo04_ytF58c5LZ8z3H56IDCAVaFtp5muKGw68lCcqpEqUXevmd75big_a84BGohNV-Kf2EKfV11CnH3D2s7Awmxas_uVc6hQa3b7N818NU8yqav2UETxRSGrDJ7lQ4PhSxsuD5Ta3RTOugQpt2RNCNjd5H-F3hP_bBxp6b7M3Hfm7BOo_PhmfAt9NzjB-eojzvAS92mBjUHdQEQkXYZnfGbFw");'></div>
+<div class="flex flex-col">
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-1">June 10, 2024</p>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">The Benefits of Cloud Solutions for Your Business</h3>
+<p class="text-gray-600 dark:text-gray-400">An in-depth look at the benefits of adopting cloud solutions for your business, including cost savings, scalability, and enhanced collaboration.</p>
+</div>
+</article>
+<article class="flex flex-col sm:flex-row items-center gap-6 p-4 rounded-xl hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors">
+<div class="w-full sm:w-32 h-32 flex-shrink-0 bg-cover bg-center rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBvebdsvwSKrugoLAboqoGI7ReK_PojnT7xgkXNvgNZX6AGBQtgdDxuWy9tlp-mJP_bCD2zSTc2Im4XE4OSYZbck7CTNJbiOIJ_JmaZ3-T8I2DA7BMJJbcBYsj4cFEbnGQP0Ru95BD_c5CD6Jp5coYDG02VOvvsVpF-zksRysp2V3-rjjHUmIvSaKheXFMnzfhfjnjXqeUtQz4NZFuveBBlGJ7IqII7z6rlcq9XxwujjopzFBgpPv4tBEhAZgoS-1BSvRFslxovLWg");'></div>
+<div class="flex flex-col">
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-1">May 22, 2024</p>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Leveraging AI and Machine Learning for Business Growth</h3>
+<p class="text-gray-600 dark:text-gray-400">Discover how to leverage AI and machine learning to automate tasks, improve decision-making, and gain a competitive edge.</p>
+</div>
+</article>
+</div>
+<nav class="flex items-center justify-center gap-2 mt-12">
+<a class="flex size-10 items-center justify-center rounded-full text-gray-500 dark:text-gray-400 hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors" href="#">
+<svg fill="currentColor" height="18px" viewBox="0 0 256 256" width="18px" xmlns="http://www.w3.org/2000/svg">
+<path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path>
+</svg>
+</a>
+<a class="flex size-10 items-center justify-center rounded-full text-white bg-primary font-bold" href="#">1</a>
+<a class="flex size-10 items-center justify-center rounded-full text-gray-700 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors" href="#">2</a>
+<a class="flex size-10 items-center justify-center rounded-full text-gray-700 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors" href="#">3</a>
+<span class="flex size-10 items-center justify-center rounded-full text-gray-500 dark:text-gray-400">...</span>
+<a class="flex size-10 items-center justify-center rounded-full text-gray-700 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors" href="#">10</a>
+<a class="flex size-10 items-center justify-center rounded-full text-gray-500 dark:text-gray-400 hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors" href="#">
+<svg fill="currentColor" height="18px" viewBox="0 0 256 256" width="18px" xmlns="http://www.w3.org/2000/svg">
+<path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+</svg>
+</a>
+</nav>
+</section>
+</div>
+</main>
+<footer class="bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-800 mt-16">
+<div class="container mx-auto px-10 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6">
+<div class="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2">
+<a class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Contact Us</a>
+</div>
+<p class="text-gray-600 dark:text-gray-400">© 2024 SolanaLink. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>

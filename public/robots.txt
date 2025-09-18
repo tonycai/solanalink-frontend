@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Update to your production domain
+Sitemap: https://solanalink.jp/sitemap.xml
+

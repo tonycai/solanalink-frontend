@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Update base domain to your production host -->
+  <url><loc>https://solanalink.example.com/</loc></url>
+  <url><loc>https://solanalink.example.com/homepage/</loc></url>
+  <url><loc>https://solanalink.example.com/our-services/</loc></url>
+  <url><loc>https://solanalink.example.com/about-us/</loc></url>
+  <url><loc>https://solanalink.example.com/contact-us/</loc></url>
+  <url><loc>https://solanalink.example.com/compliance-and-investigations/</loc></url>
+  <url><loc>https://solanalink.example.com/news-and-blog-list/</loc></url>
+  <url><loc>https://solanalink.example.com/news-and-blog-list/future-of-cloud-computing/</loc></url>
+  <url><loc>https://solanalink.example.com/news-and-blog-list/edge-computing-and-distributed-systems/</loc></url>
+  <url><loc>https://solanalink.example.com/news-and-blog-list/personalization-strategies/</loc></url>
+  <url><loc>https://solanalink.example.com/news-and-blog-list/cloud-security-2025/</loc></url>
+  <url><loc>https://solanalink.example.com/industries/</loc></url>
+  <url><loc>https://solanalink.example.com/case-studies/</loc></url>
+  <url><loc>https://solanalink.example.com/careers/</loc></url>
+</urlset>
+

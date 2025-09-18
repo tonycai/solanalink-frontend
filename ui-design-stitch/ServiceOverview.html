@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<title>SolanaLink IT Services</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#1173d4",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101922",
+            "foreground-light": "#111418",
+            "foreground-dark": "#ffffff",
+            "subtle-light": "#617589",
+            "subtle-dark": "#a0b3c4",
+            "border-light": "#e3e8ee",
+            "border-dark": "#2c3a47",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-size: 24px;
+    }
+  </style>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex flex-col min-h-screen">
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16 border-b border-border-light dark:border-border-dark">
+<div class="flex items-center gap-4">
+<div class="text-primary">
+<svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"></path>
+</svg>
+</div>
+<h1 class="text-2xl font-bold text-foreground-light dark:text-foreground-dark">SolanaLink</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-subtle-light dark:text-subtle-dark hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-medium text-subtle-light dark:text-subtle-dark hover:text-primary transition-colors" href="#">About</a>
+<a class="text-sm font-medium text-primary dark:text-primary" href="#">Services</a>
+<a class="text-sm font-medium text-subtle-light dark:text-subtle-dark hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden md:inline-flex items-center justify-center rounded-lg h-10 px-6 bg-primary text-white text-sm font-bold shadow-md hover:bg-primary/90 transition-all">
+              Get a Quote
+            </button>
+<button class="md:hidden p-2 rounded-md text-subtle-light dark:text-subtle-dark hover:bg-primary/10">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+<div class="max-w-3xl mx-auto text-center mb-16">
+<h2 class="text-4xl font-extrabold tracking-tight text-foreground-light dark:text-foreground-dark sm:text-5xl">Our Services</h2>
+<p class="mt-4 text-lg text-subtle-light dark:text-subtle-dark">
+            SolanaLink offers a comprehensive suite of IT services designed to meet the evolving needs of modern businesses. From cloud computing to blockchain solutions, we provide the expertise and support you need to thrive in today's digital landscape.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white dark:bg-background-dark/50 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 p-8 border border-border-light dark:border-border-dark">
+<div class="flex items-center justify-center size-16 rounded-full bg-primary/10 text-primary mb-6">
+<span class="material-symbols-outlined">cloud</span>
+</div>
+<h3 class="text-xl font-bold text-foreground-light dark:text-foreground-dark mb-3">Cloud Computing</h3>
+<p class="text-subtle-light dark:text-subtle-dark mb-4 text-sm">
+              Scalable, secure, and cost-effective solutions to optimize your business operations.
+            </p>
+<ul class="space-y-2 text-sm text-subtle-light dark:text-subtle-dark">
+<li class="flex items-start"><span class="material-symbols-outlined text-primary/80 mr-2 text-base">check_circle</span>Cloud Migration</li>
+<li class="flex items-start"><span class="material-symbols-outlined text-primary/80 mr-2 text-base">check_circle</span>Infrastructure Management</li>
+<li class="flex items-start"><span class="material-symbols-outlined text-primary/80 mr-2 text-base">check_circle</span>Cloud Security</li>
+</ul>
+</div>
+<div class="bg-white dark:bg-background-dark/50 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 p-8 border border-border-light dark:border-border-dark">
+<div class="flex items-center justify-center size-16 rounded-full bg-primary/10 text-primary mb-6">
+<span class="material-symbols-outlined">shopping_cart</span>
+</div>
+<h3 class="text-xl font-bold text-foreground-light dark:text-foreground-dark mb-3">E-commerce</h3>
+<p class="text-subtle-light dark:text-subtle-dark mb-4 text-sm">
+              Robust and user-friendly platforms that drive sales and enhance customer experience.
+            </p>
+<ul class="space-y-2 text-sm text-subtle-light dark:text-subtle-dark">
+<li class="flex items-start"><span class="material-symbols-outlined text-primary/80 mr-2 text-base">check_circle</span>Platform Development</li>
+<li class="flex items-start"><span class="material-symbols-outlined text-primary/80 mr-2 text-base">check_circle</span>Payment Gateway Integration</li>
+<li class="flex items-start"><span class="material-symbols-outlined text-primary/80 mr-2 text-base">check_circle</span>Inventory Management</li>
+</ul>
+</div>
+<div class="bg-white dark:bg-background-dark/50 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 p-8 border border-border-light dark:border-border-dark">
+<div class="flex items-center justify-center size-16 rounded-full bg-primary/10 text-primary mb-6">
+<span class="material-symbols-outlined">public</span>
+</div>
+<h3 class="text-xl font-bold text-foreground-light dark:text-foreground-dark mb-3">Web Solutions</h3>
+<p class="text-subtle-light dark:text-subtle-dark mb-4 text-sm">
+              Tailored solutions ensuring a strong online presence and seamless user experience.
+            </p>
+<ul class="space-y-2 text-sm text-subtle-light dark:text-subtle-dark">
+<li class="flex items-start"><span class="material-symbols-outlined text-primary/80 mr-2 text-base">check_circle</span>Website Design &amp; Dev</li>
+<li class="flex items-start"><span class="material-symbols-outlined text-primary/80 mr-2 text-base">check_circle</span>Content Management (CMS)</li>
+<li class="flex items-start"><span class="material-symbols-outlined text-primary/80 mr-2 text-base">check_circle</span>Search Engine Optimization</li>
+</ul>
+</div>
+<div class="bg-white dark:bg-background-dark/50 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 p-8 border border-border-light dark:border-border-dark">
+<div class="flex items-center justify-center size-16 rounded-full bg-primary/10 text-primary mb-6">
+<span class="material-symbols-outlined">layers</span>
+</div>
+<h3 class="text-xl font-bold text-foreground-light dark:text-foreground-dark mb-3">Blockchain</h3>
+<p class="text-subtle-light dark:text-subtle-dark mb-4 text-sm">
+              Leveraging blockchain technology for secure, transparent, and decentralized solutions.
+            </p>
+<ul class="space-y-2 text-sm text-subtle-light dark:text-subtle-dark">
+<li class="flex items-start"><span class="material-symbols-outlined text-primary/80 mr-2 text-base">check_circle</span>Smart Contract Development</li>
+<li class="flex items-start"><span class="material-symbols-outlined text-primary/80 mr-2 text-base">check_circle</span>Decentralized Apps (dApps)</li>
+<li class="flex items-start"><span class="material-symbols-outlined text-primary/80 mr-2 text-base">check_circle</span>Cryptocurrency Integration</li>
+</ul>
+</div>
+<div class="bg-white dark:bg-background-dark/50 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 p-8 border border-border-light dark:border-border-dark lg:col-span-2">
+<div class="flex flex-col sm:flex-row">
+<div class="flex-shrink-0 flex items-center justify-center size-16 rounded-full bg-primary/10 text-primary mb-6 sm:mb-0 sm:mr-6">
+<span class="material-symbols-outlined">security</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-foreground-light dark:text-foreground-dark mb-3">Compliance &amp; Security</h3>
+<p class="text-subtle-light dark:text-subtle-dark mb-4 text-sm">
+                    We ensure your IT infrastructure meets industry standards and regulations, protecting your data and maintaining trust.
+                  </p>
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-sm text-subtle-light dark:text-subtle-dark">
+<li class="flex items-start"><span class="material-symbols-outlined text-primary/80 mr-2 text-base">check_circle</span>Data Protection &amp; Privacy</li>
+<li class="flex items-start"><span class="material-symbols-outlined text-primary/80 mr-2 text-base">check_circle</span>Regulatory Compliance</li>
+<li class="flex items-start"><span class="material-symbols-outlined text-primary/80 mr-2 text-base">check_circle</span>Cybersecurity Audits</li>
+<li class="flex items-start"><span class="material-symbols-outlined text-primary/80 mr-2 text-base">check_circle</span>Risk Management</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-white dark:bg-background-dark/50 border-t border-border-light dark:border-border-dark">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-sm text-subtle-light dark:text-subtle-dark">
+            © 2024 SolanaLink. All rights reserved.
+          </p>
+<div class="flex gap-6 mt-4 md:mt-0">
+<a class="text-subtle-light dark:text-subtle-dark hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-subtle-light dark:text-subtle-dark hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>
