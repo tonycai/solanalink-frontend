@@ -1,195 +1,420 @@
 # SolanaLink Frontend
 
-Static-exported marketing website for SolanaLink built with Next.js 15 (App Router), React 19, TypeScript, and Tailwind CSS 4. The site is fully static (no server runtime) and deployable to any static host.
+A modern, professional static marketing website for SolanaLink built with Next.js 15 (App Router), React 19, TypeScript, and Tailwind CSS 4. The site is fully static (no server runtime) and deployable to any static hosting provider.
 
-## Overview
+## 🚀 Overview
 
-- App Router + static export (`out/`) with trailing slashes and unoptimized images.
-- Reusable layout and shared UI components (Header, Footer, Why Choose Us, Client Testimonials).
-- Marketing pages: Homepage, Services, About, Contact, Compliance & Investigations, News & Blog (list + dynamic details), Industries, Case Studies, Careers.
-- Vitest + Testing Library for unit tests and coverage.
+SolanaLink Frontend is a high-performance marketing website showcasing IT services across cloud computing, e-commerce, web development, blockchain, and compliance domains. Built with cutting-edge technologies and optimized for static deployment, it delivers excellent user experience with minimal infrastructure requirements.
 
-## Architecture
+### Key Features
+
+- **Static Site Generation** - Fully static export with no server runtime required
+- **Modern Tech Stack** - Next.js 15, React 19, TypeScript, Tailwind CSS 4
+- **Responsive Design** - Mobile-first approach with adaptive layouts
+- **SEO Optimized** - Metadata, structured data, sitemap, and canonical URLs
+- **Internationalization** - Japanese language support with bilingual content
+- **Accessibility** - ARIA attributes, skip links, and keyboard navigation
+- **Testing Coverage** - Unit tests with Vitest and React Testing Library
+- **CI/CD Ready** - GitHub Actions workflow with automated testing and builds
+- **Docker Support** - Containerized development and deployment options
+
+## 🏗️ Architecture
 
 ```mermaid
 flowchart TD
   A[Browser] --> B[Next.js 15 App Router]
   B --> C[Static Export\n(out/)]
-  C --> D[Static Hosting\n(Netlify / GitHub Pages / Vercel static)]
+  C --> D[Static Hosting\n(CDN/Netlify/Vercel/S3)]
 
-  B --> E[Routes]
-  E --> E1[/homepage/]
-  E --> E2[/our-services/]
-  E --> E3[/about-us/]
-  E --> E4[/contact-us/]
-  E --> E5[/compliance-and-investigations/]
-  E --> E6[/news-and-blog-list/]
-  E6 --> E7[/news-and-blog-list/[slug]/]
-  E --> E8[/industries/]
-  E --> E9[/case-studies/]
-  E --> E10[/careers/]
+  B --> E[Pages & Routes]
+  E --> E1[/ - Landing Page]
+  E --> E2[/homepage/ - Marketing Hero]
+  E --> E3[/our-services/ - Services]
+  E --> E4[/about-us/ - Company Info]
+  E --> E5[/contact-us/ - Contact]
+  E --> E6[/compliance-and-investigations/]
+  E --> E7[/news-and-blog-list/]
+  E7 --> E8[/news-and-blog-list/[slug]/]
+  E --> E9[/industries/]
+  E --> E10[/case-studies/]
+  E --> E11[/careers/]
 
   B --> F[Shared Components]
-  F --> F1[Header]
-  F --> F2[Footer]
-  F --> F3[WhyChooseUs]
-  F --> F4[ClientTestimonials]
+  F --> F1[Header - Navigation]
+  F --> F2[Footer - Sitemap]
+  F --> F3[WhyChooseUs - Value Props]
+  F --> F4[ClientTestimonials - Reviews]
 
-  B --> G[Styling: Tailwind CSS 4]
-  B --> H[Tests: Vitest + RTL]
+  B --> G[Styling System]
+  G --> G1[Tailwind CSS 4]
+  G --> G2[Custom Theme Tokens]
+  G --> G3[Dark/Light Mode]
+
+  B --> H[Quality Assurance]
+  H --> H1[Vitest + RTL]
+  H --> H2[ESLint]
+  H --> H3[TypeScript Strict]
 ```
 
-Key configuration (see `next.config.ts`):
+### Configuration Highlights
 
-- `output: "export"` — fully static export.
-- `trailingSlash: true` — routes end with `/` (e.g., `/about-us/`).
-- `images.unoptimized: true` — native `<img>` with no server optimizer.
-
-## Technology Stack
-
-- Framework: Next.js 15 (App Router), React 19, TypeScript
-- Styling: Tailwind CSS 4 (via PostCSS), utility-first
-- Fonts: Inter via `next/font` (swap)
-- Testing: Vitest, @testing-library/react, @testing-library/jest-dom
-- Linting: ESLint (Next core-web-vitals + TS rules)
-- Container: Docker + docker-compose
-
-## Directory Structure
-
-```
-.
-├─ AGENTS.md
-├─ README.md
-├─ next.config.ts
-├─ package.json
-├─ tsconfig.json
-├─ eslint.config.mjs
-├─ postcss.config.mjs
-├─ docker-compose.yml
-├─ Dockerfile
-├─ public/
-│  └─ solanalink-logo.png
-├─ src/
-│  ├─ app/
-│  │  ├─ layout.tsx              # Root layout (Header/Footer)
-│  │  ├─ globals.css             # Tailwind 4 theme tokens
-│  │  ├─ page.tsx                # Root landing (company services summary)
-│  │  ├─ homepage/page.tsx       # Marketing hero + sections
-│  │  ├─ our-services/page.tsx   # ServiceOverview prototype port
-│  │  ├─ about-us/page.tsx       # About prototype port
-│  │  ├─ contact-us/page.tsx     # Contact prototype port
-│  │  ├─ compliance-and-investigations/page.tsx
-│  │  ├─ news-and-blog-list/page.tsx
-│  │  ├─ news-and-blog-list/[slug]/page.tsx  # Dynamic article details
-│  │  ├─ industries/page.tsx
-│  │  ├─ case-studies/page.tsx
-│  │  ├─ careers/page.tsx
-│  │  └─ components/
-│  │     ├─ Header.tsx
-│  │     ├─ Footer.tsx
-│  │     ├─ WhyChooseUs.tsx
-│  │     └─ ClientTestimonials.tsx
-│  ├─ __tests__/                  # Unit tests (Vitest + RTL)
-│  │  ├─ Header.test.tsx
-│  │  ├─ Footer.test.tsx
-│  │  ├─ ClientTestimonials.test.tsx
-│  │  └─ WhyChooseUs.test.tsx
-│  └─ test/setup.ts              # jest-dom + Next.js mocks
-├─ vitest.config.ts
-└─ ui-design-stitch/             # HTML prototypes (reference only)
+```typescript
+// next.config.ts
+{
+  output: "export",           // Fully static site generation
+  trailingSlash: true,        // Directory-based routing
+  images: { unoptimized: true } // Native images for static export
+}
 ```
 
-## Development
+## 💻 Technology Stack
 
-Install dependencies and start the dev server (Turbopack):
+### Core Framework
+- **Next.js 15** - React framework with App Router
+- **React 19** - UI library with latest features
+- **TypeScript** - Type-safe development
+- **Node.js 20** - Runtime environment
 
+### Styling & Design
+- **Tailwind CSS 4** - Utility-first CSS via PostCSS
+- **Custom Theme Tokens** - CSS custom properties for theming
+- **Google Fonts** - Inter (UI), Geist Mono (code), Newsreader (display)
+- **Responsive Design** - Mobile-first approach
+
+### Development Tools
+- **Turbopack** - Fast development builds
+- **ESLint** - Code quality with Next.js rules
+- **Vitest** - Modern test runner
+- **React Testing Library** - Component testing
+- **Coverage Reports** - HTML, LCOV, text formats
+
+### Infrastructure
+- **Docker** - Multi-stage containerization
+- **GitHub Actions** - CI/CD pipeline
+- **Static Hosting** - CDN-ready deployment
+
+## 📁 Project Structure
+
+```
+solanalink-frontend/
+├── src/
+│   ├── app/                    # Next.js App Router
+│   │   ├── components/         # Shared UI components
+│   │   │   ├── Header.tsx      # Navigation with active states
+│   │   │   ├── Footer.tsx      # Sitemap and social links
+│   │   │   ├── WhyChooseUs.tsx # Value proposition section
+│   │   │   └── ClientTestimonials.tsx # Customer reviews
+│   │   ├── layout.tsx          # Root layout wrapper
+│   │   ├── globals.css         # Global styles & theme
+│   │   ├── page.tsx            # Landing page
+│   │   ├── homepage/           # Marketing homepage
+│   │   ├── our-services/       # Services overview
+│   │   ├── about-us/           # Company information
+│   │   ├── contact-us/         # Contact details
+│   │   ├── compliance-and-investigations/
+│   │   ├── news-and-blog-list/ # Blog listing & articles
+│   │   │   └── [slug]/         # Dynamic blog posts
+│   │   ├── industries/         # Target industries
+│   │   ├── case-studies/       # Project showcases
+│   │   └── careers/            # Job opportunities
+│   ├── __tests__/              # Unit test files
+│   └── test/setup.ts           # Test configuration
+├── public/                     # Static assets
+│   ├── robots.txt             # SEO crawler rules
+│   ├── sitemap.xml            # Site structure for SEO
+│   └── solanalink-logo.png   # Company logo
+├── .github/workflows/          # CI/CD configuration
+├── docker-compose.yml          # Container orchestration
+├── Dockerfile                  # Container definition
+├── next.config.ts             # Next.js configuration
+├── tailwind.config.ts         # Tailwind CSS settings
+├── vitest.config.ts           # Test runner setup
+├── package.json               # Dependencies & scripts
+└── CLAUDE.md                  # AI assistant guidance
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 20+ and npm 10+
+- Git for version control
+- Docker (optional) for containerized development
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/your-org/solanalink-frontend.git
+cd solanalink-frontend
+```
+
+2. Install dependencies:
 ```bash
 npm install
+```
+
+3. Start development server:
+```bash
 npm run dev
 ```
 
-Open http://localhost:3000 (header “Home” points to `/homepage/`).
+4. Open http://localhost:3000 in your browser
 
-Run lints:
+## 📝 Available Scripts
 
+### Development
 ```bash
-npm run lint
+npm run dev          # Start dev server with Turbopack (localhost:3000)
+npm run build        # Production build and static export to out/
+npm start            # Serve production build locally
+npx serve out        # Preview static export
 ```
 
-## Testing & Coverage
-
+### Testing
 ```bash
-npm run test            # run unit tests
-npm run test:watch      # watch mode
-npm run test:coverage   # HTML + lcov coverage in coverage/
+npm run test            # Run unit tests
+npm run test:watch      # Watch mode for tests
+npm run test:coverage   # Generate coverage reports
 ```
 
-Open `coverage/index.html` for the report.
+### Code Quality
+```bash
+npm run lint            # Run ESLint checks
+```
 
-## Build & Static Preview
+### Docker Development
+```bash
+docker-compose up --build  # Build and run in container
+```
 
-Generate the production static export:
+## 🧪 Testing Strategy
 
+The project uses **Vitest** with **React Testing Library** for comprehensive testing:
+
+### Test Coverage
+- All shared components have unit tests
+- Navigation state management testing
+- Accessibility attribute validation
+- Content rendering verification
+
+### Running Tests
+```bash
+# Run all tests
+npm run test
+
+# Watch mode during development
+npm run test:watch
+
+# Generate coverage report
+npm run test:coverage
+```
+
+Coverage reports are generated in `coverage/` directory. Open `coverage/index.html` to view detailed reports.
+
+### Test Structure Example
+```typescript
+describe('Header', () => {
+  it('renders navigation links', () => {
+    // Test implementation
+  });
+
+  it('marks current page with aria-current', () => {
+    // Accessibility testing
+  });
+});
+```
+
+## 🚢 Deployment
+
+### Static Export
+
+1. Build the static site:
 ```bash
 npm run build
 ```
 
-Preview the exported site from `out/`:
+2. The static files are generated in the `out/` directory
 
+3. Deploy to your preferred static hosting provider:
+
+#### Netlify
 ```bash
-npx serve out
+# Install Netlify CLI
+npm install -g netlify-cli
+
+# Deploy to Netlify
+netlify deploy --dir=out --prod
 ```
 
-## Deployment
+#### Vercel
+```bash
+# Install Vercel CLI
+npm install -g vercel
 
-Deploy the contents of `out/` to any static host (Netlify, GitHub Pages, Cloudflare Pages, S3+CDN, Vercel static). Notes:
+# Deploy to Vercel
+vercel --prod
+```
 
-- Internal links include trailing slashes to match static export directories.
-- Only `NEXT_PUBLIC_*` env vars are supported (values are baked at build time).
+#### GitHub Pages
+```bash
+# Using gh-pages package
+npm install --save-dev gh-pages
+npx gh-pages -d out
+```
 
-### SEO static assets
+#### AWS S3 + CloudFront
+```bash
+# Sync to S3 bucket
+aws s3 sync out/ s3://your-bucket-name --delete
 
-- `public/robots.txt` — grants crawl access and points to the sitemap.
-- `public/sitemap.xml` — update the base domain (`https://solanalink.example.com`) to your production host.
+# Invalidate CloudFront cache
+aws cloudfront create-invalidation --distribution-id YOUR_DIST_ID --paths "/*"
+```
 
-## Continuous Integration
+### Docker Deployment
 
-GitHub Actions workflow at `.github/workflows/ci.yml` runs on pushes and PRs:
+Build and run the Docker container:
+```bash
+# Build the image
+docker build -t solanalink-frontend .
 
-- Install (npm ci)
-- Lint (eslint)
-- Tests + Coverage (Vitest) with HTML report artifact
-- Build (Next static export) with `out/` artifact
+# Run the container
+docker run -p 3000:80 solanalink-frontend
+```
 
-## Docker
-
-Build and serve locally via Compose:
-
+Using Docker Compose:
 ```bash
 docker-compose up --build
 ```
 
-Then open http://localhost:3000.
+## 🔄 CI/CD Pipeline
 
-## Conventions (from AGENTS.md)
+GitHub Actions workflow (`.github/workflows/ci.yml`) automates:
 
-- TypeScript + React 19 + Next 15; ESM imports; 2-space indentation.
-- Component files: PascalCase `.tsx`; route files: `page.tsx`, `layout.tsx`.
-- Tailwind CSS 4; prefer utility-first classes over custom CSS.
-- Static export: `output: "export"`, `trailingSlash: true`, `images.unoptimized: true`.
-- Commits: `type(scope): subject` (≤72 chars). Run `npm run lint` and `npm run build` before PRs.
+1. **Trigger**: Push/PR to main branch
+2. **Environment**: Node.js 20
+3. **Steps**:
+   - Install dependencies (`npm ci`)
+   - Lint code (`npm run lint`)
+   - Run tests with coverage (`npm run test:coverage`)
+   - Build static site (`npm run build`)
+   - Upload artifacts (coverage + static export)
 
-## Roadmap / Next Session
+## 🎨 Development Guidelines
 
-- Active link styles: done (Header).
-- Typography polish: optional `Newsreader` for headings.
-- SEO: sitemap.xml, robots.txt, canonical + JSON-LD.
-- Blog: expand article data and content pipeline.
-- A11y: focus rings and keyboard nav improvements.
-- CI: GitHub Action for lint + build + tests + coverage artifact.
+### Code Style
+- **TypeScript** with strict mode enabled
+- **2-space indentation**
+- **ESM imports only** (no CommonJS)
+- **PascalCase** for React components
+- **kebab-case** for directories
+- **Utility-first** Tailwind CSS approach
 
-## References
+### Component Development
+```typescript
+// Example component structure
+"use client"; // Only when client interactivity needed
 
-- Next.js docs: https://nextjs.org/docs
-- Tailwind CSS v4: https://tailwindcss.com/docs
-- Vitest: https://vitest.dev/
+export default function ComponentName() {
+  return (
+    <div className="utility-classes">
+      {/* Component content */}
+    </div>
+  );
+}
+```
+
+### Commit Convention
+```bash
+type(scope): subject
+
+# Examples:
+feat(header): add mobile navigation
+fix(blog): correct article routing
+docs(readme): update deployment instructions
+test(footer): add accessibility tests
+```
+
+## 🌐 SEO & Performance
+
+### SEO Features
+- **Static Site Generation** for fast loading
+- **Metadata Management** per page
+- **Structured Data** (JSON-LD)
+- **Canonical URLs**
+- **Open Graph tags**
+- **Sitemap.xml** and **robots.txt**
+
+### Performance Optimizations
+- **Static export** with CDN compatibility
+- **Minimal JavaScript** bundle
+- **Font display swap** for web fonts
+- **Trailing slashes** for proper routing
+- **Turbopack** for fast development builds
+
+### Updating SEO Assets
+1. Edit `public/sitemap.xml` with your domain
+2. Update `public/robots.txt` if needed
+3. Configure metadata in each page component
+
+## 🔧 Configuration Files
+
+### Key Configurations
+- `next.config.ts` - Next.js settings and static export
+- `tailwind.config.ts` - Tailwind CSS customization
+- `vitest.config.ts` - Test runner configuration
+- `eslint.config.mjs` - Linting rules
+- `tsconfig.json` - TypeScript compiler options
+- `postcss.config.mjs` - PostCSS with Tailwind
+
+## 📚 Documentation
+
+- **README.md** - This file (project overview)
+- **CLAUDE.md** - AI assistant guidance for development
+- **AGENTS.md** - Development conventions and guidelines
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
+4. Run tests and linting (`npm run test && npm run lint`)
+5. Push to the branch (`git push origin feature/amazing-feature`)
+6. Open a Pull Request
+
+## 🐛 Known Issues & Roadmap
+
+### Current Limitations
+- Placeholder content on some pages (Industries, Case Studies, Careers)
+- Static blog system (articles hardcoded in TypeScript)
+- No search functionality for blog content
+- Contact forms link to external services
+
+### Future Enhancements
+- [ ] Content Management System integration
+- [ ] Blog search functionality
+- [ ] Enhanced form handling
+- [ ] Progressive Web App features
+- [ ] Advanced analytics integration
+- [ ] Multi-language support expansion
+
+## 📄 License
+
+This project is proprietary software. All rights reserved.
+
+## 🔗 Resources
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [React Documentation](https://react.dev)
+- [Tailwind CSS v4](https://tailwindcss.com/docs)
+- [Vitest Documentation](https://vitest.dev)
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/)
+
+## 💡 Support
+
+For questions or support, please contact the development team or open an issue in the repository.
+
+---
+
+Built with ❤️ by the SolanaLink development team
