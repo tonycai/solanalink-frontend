@@ -18,6 +18,35 @@ SolanaLink Frontend is a high-performance marketing website showcasing IT servic
 - **CI/CD Ready** - GitHub Actions workflow with automated testing and builds
 - **Docker Support** - Containerized development and deployment options
 
+### Services Showcased
+
+1. **Cloud Computing Solutions**
+   - Cloud Migration Services
+   - Infrastructure Management
+   - Monitoring & Optimization
+
+2. **E-commerce Development**
+   - Online Storefront Setup
+   - Payment & Logistics Integration
+   - SEO & Performance Optimization
+
+3. **Web Application Development**
+   - Custom Web Applications
+   - CMS & Editorial Workflows
+   - Performance & Accessibility
+
+4. **Blockchain Technology**
+   - Smart Contract Development
+   - Decentralized Applications (dApps)
+   - Cryptocurrency Integration
+
+5. **Compliance & Security**
+   - AML/KYT Screening
+   - Business KYC
+   - Blockchain Investigations
+   - Regulatory Compliance
+   - Cybersecurity Audits
+
 ## 🏗️ Architecture
 
 ```mermaid
@@ -27,17 +56,17 @@ flowchart TD
   C --> D["Static Hosting<br/>(CDN/Netlify/Vercel/S3)"]
 
   B --> E["Pages & Routes"]
-  E --> E1["Root - Landing Page"]
+  E --> E1["Root - Redirect to Homepage"]
   E --> E2["Homepage - Marketing Hero"]
-  E --> E3["Our Services - Services"]
+  E --> E3["Our Services - 5 Service Categories"]
   E --> E4["About Us - Company Info"]
-  E --> E5["Contact Us - Contact"]
+  E --> E5["Contact Us - Personal Contact"]
   E --> E6["Compliance & Investigations"]
-  E --> E7["News & Blog List"]
-  E7 --> E8["Blog Article (Dynamic)"]
-  E --> E9["Industries"]
-  E --> E10["Case Studies"]
-  E --> E11["Careers"]
+  E --> E7["News & Blog List - 4 Articles"]
+  E7 --> E8["Blog Article (Dynamic Routing)"]
+  E --> E9["Industries (Placeholder)"]
+  E --> E10["Case Studies (Placeholder)"]
+  E --> E11["Careers (Placeholder)"]
 
   B --> F["Shared Components"]
   F --> F1["Header - Navigation"]
@@ -100,29 +129,34 @@ solanalink-frontend/
 ├── src/
 │   ├── app/                    # Next.js App Router
 │   │   ├── components/         # Shared UI components
-│   │   │   ├── Header.tsx      # Navigation with active states
+│   │   │   ├── Header.tsx      # Navigation with active states (8 links + CTA)
 │   │   │   ├── Footer.tsx      # Sitemap and social links
-│   │   │   ├── WhyChooseUs.tsx # Value proposition section
-│   │   │   └── ClientTestimonials.tsx # Customer reviews
+│   │   │   ├── WhyChooseUs.tsx # Three value propositions
+│   │   │   └── ClientTestimonials.tsx # Three customer reviews with ratings
 │   │   ├── layout.tsx          # Root layout wrapper
 │   │   ├── globals.css         # Global styles & theme
-│   │   ├── page.tsx            # Landing page
-│   │   ├── homepage/           # Marketing homepage
-│   │   ├── our-services/       # Services overview
-│   │   ├── about-us/           # Company information
-│   │   ├── contact-us/         # Contact details
-│   │   ├── compliance-and-investigations/
-│   │   ├── news-and-blog-list/ # Blog listing & articles
-│   │   │   └── [slug]/         # Dynamic blog posts
-│   │   ├── industries/         # Target industries
-│   │   ├── case-studies/       # Project showcases
-│   │   └── careers/            # Job opportunities
+│   │   ├── page.tsx            # Root redirect to /homepage/
+│   │   ├── homepage/           # Main landing page with hero section
+│   │   ├── our-services/       # 5 service categories detailed
+│   │   ├── about-us/           # Mission, vision, history, team
+│   │   ├── contact-us/         # Personal contact (Tony) with social links
+│   │   ├── compliance-and-investigations/ # AML/KYC services
+│   │   ├── news-and-blog-list/ # Blog listing with 4 articles
+│   │   │   └── [slug]/         # Dynamic blog posts (4 pre-defined)
+│   │   ├── industries/         # Placeholder - needs content
+│   │   ├── case-studies/       # Placeholder - needs content
+│   │   └── careers/            # Placeholder - needs content
 │   ├── __tests__/              # Unit test files
 │   └── test/setup.ts           # Test configuration
 ├── public/                     # Static assets
 │   ├── robots.txt             # SEO crawler rules
 │   ├── sitemap.xml            # Site structure for SEO
 │   └── solanalink-logo.png   # Company logo
+├── contents/                   # Research documentation
+│   ├── AI-and-Blockchain-Career-Research.md
+│   ├── AI-and-Blockchain-Integration-Analysis.md
+│   ├── Deep-Research-Case-Study-Successes.md
+│   └── Quantitative-Trading-Industry-Research.md
 ├── .github/workflows/          # CI/CD configuration
 ├── docker-compose.yml          # Container orchestration
 ├── Dockerfile                  # Container definition
@@ -193,10 +227,12 @@ docker-compose up --build  # Build and run in container
 The project uses **Vitest** with **React Testing Library** for comprehensive testing:
 
 ### Test Coverage
-- All shared components have unit tests
-- Navigation state management testing
-- Accessibility attribute validation
-- Content rendering verification
+- **Header Component**: Brand name, navigation links, aria-current attributes, CTA button
+- **Footer Component**: Brand name rendering, sitemap links validation
+- **WhyChooseUs Component**: Value proposition rendering
+- **ClientTestimonials Component**: Customer review rendering
+- Navigation state management testing with active page detection
+- Accessibility attribute validation (aria-labels, aria-current)
 
 ### Running Tests
 ```bash
@@ -386,22 +422,30 @@ test(footer): add accessibility tests
 ## 🐛 Known Issues & Roadmap
 
 ### Current Limitations
-- Placeholder content on some pages (Industries, Case Studies, Careers)
-- Static blog system (articles hardcoded in TypeScript)
-- No search functionality for blog content
-- Contact forms link to external services
+- **Placeholder Pages**: Industries, Case Studies, and Careers pages need content
+- **Static Blog System**: 4 articles hardcoded in TypeScript (no CMS)
+- **No Blog Search**: Blog content not searchable
+- **External Contact**: Contact form links to external services (LINE, Twitter, LinkedIn, GitHub)
+- **Social Media Links**: Footer contains placeholder social links
+- **Missing Tailwind Config**: Using inline theme in globals.css instead of tailwind.config.ts
 
 ### Future Enhancements
-- [ ] Content Management System integration
+- [ ] Complete placeholder pages (Industries, Case Studies, Careers)
+- [ ] Content Management System integration for blog
 - [ ] Blog search functionality
-- [ ] Enhanced form handling
+- [ ] Enhanced form handling with backend integration
 - [ ] Progressive Web App features
 - [ ] Advanced analytics integration
 - [ ] Multi-language support expansion
+- [ ] Proper Tailwind configuration file
+- [ ] Implement actual social media links
+- [ ] Expand test coverage for all pages
+- [ ] Add loading states and error boundaries
+- [ ] Implement proper image optimization workflow
 
 ## 📄 License
 
-This project is proprietary software. All rights reserved.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🔗 Resources
 
