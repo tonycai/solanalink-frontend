@@ -1,6 +1,7 @@
 export const metadata = {
   title: "News & Blog — SolanaLink",
   description: "Latest insights, trends, and updates from SolanaLink.",
+  alternates: { canonical: "/news-and-blog-list/" },
 };
 
 export default function NewsAndBlogListPage() {

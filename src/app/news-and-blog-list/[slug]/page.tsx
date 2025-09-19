@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Script from "next/script";
 
 type Article = {
   slug: string;
@@ -66,6 +67,16 @@ export function generateStaticParams() {
   return Object.keys(ARTICLES).map((slug) => ({ slug }));
 }
 
+export function generateMetadata({ params }: { params: { slug: string } }) {
+  const article = ARTICLES[params.slug];
+  if (!article) return {};
+  return {
+    title: `${article.title} — News & Blog | SolanaLink`,
+    description: article.excerpt,
+    alternates: { canonical: `/news-and-blog-list/${article.slug}/` },
+  };
+}
+
 export default function ArticleDetails({
   params,
 }: {
@@ -78,6 +89,26 @@ export default function ArticleDetails({
 
   return (
     <main className="flex-1">
+      <Script id="breadcrumbs-jsonld" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "News & Blog",
+              item: "https://solanalink.example.com/news-and-blog-list/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: article.title,
+              item: `https://solanalink.example.com/news-and-blog-list/${article.slug}/`,
+            },
+          ],
+        })}
+      </Script>
       <div className="container mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="flex items-center space-x-2 text-sm text-slate-500 dark:text-slate-400">
           <a className="hover:text-primary" href="/news-and-blog-list/">
@@ -146,4 +177,3 @@ export default function ArticleDetails({
     </main>
   );
 }
-

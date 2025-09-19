@@ -1,7 +1,10 @@
+import Script from "next/script";
+
 export const metadata = {
   title: "SolanaLink — Homepage",
   description:
     "End-to-end services across cloud, e‑commerce, web, blockchain, and compliance.",
+  alternates: { canonical: "/homepage/" },
 };
 
 import ClientTestimonials from "../components/ClientTestimonials";
@@ -10,6 +13,20 @@ import WhyChooseUs from "../components/WhyChooseUs";
 export default function Homepage() {
   return (
     <main>
+      <Script id="org-jsonld" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "SolanaLink",
+          url: "https://solanalink.example.com/",
+          logo: "https://solanalink.example.com/solanalink-logo.png",
+          sameAs: [
+            "https://twitter.com/TonyIronTokyo",
+            "https://www.linkedin.com/in/tony-iron-309920295/",
+            "https://github.com/tonycai",
+          ],
+        })}
+      </Script>
       <section className="flex items-center justify-center py-12 md:py-24">
         <div className="container px-4 md:px-6">
           <div className="relative">

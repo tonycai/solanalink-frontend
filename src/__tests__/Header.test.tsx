@@ -43,6 +43,14 @@ describe('Header', () => {
     );
   });
 
+  it('marks the current page with aria-current', () => {
+    render(<Header />);
+    expect(screen.getByRole('link', { name: 'Home' })).toHaveAttribute(
+      'aria-current',
+      'page'
+    );
+  });
+
   it('has Contact Us CTA', () => {
     render(<Header />);
     expect(screen.getByRole('link', { name: 'Contact Us' })).toHaveAttribute(
